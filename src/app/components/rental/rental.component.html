@@ -1,0 +1,22 @@
+<div>
+  <table class="table table-striped table-bordered align-middle">
+    <thead>
+      <tr class="table-light">
+        <th>Id</th>
+        <th>Marka</th>
+        <th>Kullanıcı</th>
+        <th>Alış Tarihi</th>
+        <th>Bırakış Tarihi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light" *ngFor="let rental of rentals">
+        <td style="width: 90px">{{ rental.rentalId }}</td>
+        <td style="width: 120px">{{ rental.brandName }}</td>
+        <td style="width: 120px">{{ rental.customerUser }}</td>
+        <td style="width: 120px">{{ rental.rentDate }}</td>
+        <td style="width: 120px">{{ rental.returnDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
