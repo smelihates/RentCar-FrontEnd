@@ -10,9 +10,10 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, NaviComponent, BrandComponent, ColorComponent, CustomerComponent, CarComponent, RentalComponent],
+  declarations: [AppComponent, NaviComponent, BrandComponent, ColorComponent, CustomerComponent, CarComponent, RentalComponent, SidebarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
