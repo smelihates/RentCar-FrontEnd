@@ -1,0 +1,26 @@
+<div class="col-md-0">
+  <br />
+  <div class="card mb-3" style="max-width: 600px">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img
+          class="img-thumbnail"
+          *ngFor="let carImage of carImages"
+          src="https://localhost:44320/{{ carImage.imagePath }}"
+          alt="..."
+        />
+      </div>
+      <div *ngFor="let car of cars" class="col-md-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.brandName }} - {{ car.modelName }}</h5>
+          <p class="card-text">{{ car.modelYear }} - {{ car.colorName }}</p>
+          <p class="card-text">{{ car.description }}</p>
+          <p class="card-text">{{ car.dailyPrice }} TL</p>
+          <!-- <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

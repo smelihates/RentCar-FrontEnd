@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ApiUrl } from '../models/apiUrl';
 import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,12 @@ export class CarService {
 
   getAll(): Observable<ListResponseModel<Car>> {
     let newUrl = ApiUrl + 'cars/getcardetails';
+    return this.httpClient.get<ListResponseModel<Car>>(newUrl);
+  }
+
+  getById(id: number): Observable<ListResponseModel<Car>> {
+    let newUrl = ApiUrl + 'cars/getcardetailsbycarid?id=' + id;
+    console.log(newUrl);
     return this.httpClient.get<ListResponseModel<Car>>(newUrl);
   }
 

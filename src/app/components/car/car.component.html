@@ -7,19 +7,23 @@
         <th>Model</th>
         <th>Yıl</th>
         <th>Renk</th>
-        <th>Fiyat</th>
-        <th>Açıklama</th>
+        <!-- <th>Fiyat</th>
+        <th>Açıklama</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr class="table-light" *ngFor="let car of cars">
-        <td style="width: 90px">{{ car.carId }}</td>
+      <tr
+        routerLink="/car/details/{{ car.carId }}"
+        class="table-light"
+        *ngFor="let car of cars"
+      >
+        <td style="width: 70px">{{ car.carId }}</td>
         <td style="width: 120px">{{ car.brandName }}</td>
         <td style="width: 120px">{{ car.modelName }}</td>
         <td style="width: 120px">{{ car.modelYear }}</td>
         <td style="width: 120px">{{ car.colorName }}</td>
-        <td style="width: 120px">{{ car.dailyPrice }}</td>
-        <td>{{ car.description }}</td>
+        <!-- <td style="width: 120px">{{ car.dailyPrice }}</td>
+        <td>{{ car.description }}</td> -->
       </tr>
     </tbody>
   </table>
