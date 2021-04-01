@@ -1,0 +1,15 @@
+<div class="col-md3">
+  <h6 class="font-weight-bold">Markalar</h6>
+  <select
+    class="form-select"
+    [(ngModel)]="currentBrand"
+    (change)="setRouteBrand(currentBrand)"
+    aria-label="Default select example"
+    style="width: 200px"
+  >
+    <option [ngValue]="undefined" selected>Tüm markalar</option>
+    <option *ngFor="let brand of brands" [ngValue]="brand">
+      {{ brand.brandName }}
+    </option>
+  </select>
+</div>

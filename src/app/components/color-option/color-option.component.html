@@ -1,0 +1,15 @@
+<div class="col-md3">
+  <h6 class="font-weight-bold">Renkler</h6>
+  <select
+    class="form-select"
+    [(ngModel)]="currentColor"
+    (change)="setRouteColor(currentColor)"
+    aria-label="Default select example"
+    style="width: 200px"
+  >
+    <option [ngValue]="undefined" selected>Tüm renkler</option>
+    <option *ngFor="let color of colors" [ngValue]="color">
+      {{ color.colorName }}
+    </option>
+  </select>
+</div>

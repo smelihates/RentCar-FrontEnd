@@ -14,6 +14,8 @@ import { RentalComponent } from './components/rental/rental.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { BrandOptionComponent } from './components/brand-option/brand-option.component';
+import { ColorOptionComponent } from './components/color-option/color-option.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     SidebarComponent,
     CarDetailComponent,
     FilterPipePipe,
+    BrandOptionComponent,
+    ColorOptionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
