@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -16,6 +17,7 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { BrandOptionComponent } from './components/brand-option/brand-option.component';
 import { ColorOptionComponent } from './components/color-option/color-option.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,16 @@ import { ColorOptionComponent } from './components/color-option/color-option.com
     BrandOptionComponent,
     ColorOptionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+    }),
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

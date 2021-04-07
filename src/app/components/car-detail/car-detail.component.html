@@ -1,25 +1,57 @@
-<div class="col-md-0">
-  <br />
-  <div class="card mb-3" style="max-width: 600px">
-    <div class="row g-0">
-      <div class="col-md-6">
-        <img
-          class="img-thumbnail"
-          *ngFor="let carImage of carImages"
-          src="https://localhost:44320/{{ carImage.imagePath }}"
-          alt="..."
-        />
-      </div>
-      <div *ngFor="let car of cars" class="col-md-3">
-        <div class="card-body">
-          <h5 class="card-title">{{ car.brandName }} - {{ car.modelName }}</h5>
-          <p class="card-text">{{ car.modelYear }} - {{ car.colorName }}</p>
-          <p class="card-text">{{ car.description }}</p>
-          <p class="card-text">{{ car.dailyPrice }} TL</p>
-          <!-- <p class="card-text">
+<br />
+<div class="mb-3">
+  <div class="row">
+    <div class="card col-md-3" style="width: 400px">
+      <img
+        style="width: 600px; height: 250px"
+        class="img-thumbnail"
+        *ngFor="let carImage of carImages"
+        src="https://localhost:44320/{{ carImage.imagePath }}"
+        alt="..."
+      />
+    </div>
+    <div class="card col-md-3" style="width: 200px">
+      <div *ngFor="let car of cars">
+        <br />
+        <h5 class="card-title">{{ car.brandName }} - {{ car.modelName }}</h5>
+        <p class="card-text">{{ car.modelYear }} - {{ car.colorName }}</p>
+        <p class="card-text">{{ car.description }}</p>
+        <p class="card-text">{{ car.dailyPrice }} TL</p>
+
+        <!-- <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
           </p> -->
-        </div>
+      </div>
+    </div>
+    <div class="card col-md-3" style="width: 200px">
+      <div>
+        <br />
+        <p>
+          <label for="rentDate"><h5>Başlangıç Tarihi</h5></label>
+          <input
+            class="form-control"
+            type="date"
+            id="rentDate"
+            min="{{ getRentMinDate() }}"
+            value="{{ getRentMinDate() }}"
+            [(ngModel)]="rentDate"
+          />
+        </p>
+
+        <p>
+          <label for="returnDate"><h5>Bitiş Tarihi</h5></label>
+          <input
+            class="form-control"
+            type="date"
+            id="returnDate"
+            min="{{ getReturnMinDate() }}"
+            value="{{ getReturnMinDate() }}"
+            [(ngModel)]="returnDate"
+          />
+        </p>
+        <a (click)="RentalControl()" class="btn btn-primary" style="width: 100%"
+          >Kirala</a
+        >
       </div>
     </div>
   </div>
