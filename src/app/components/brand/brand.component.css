@@ -1,0 +1,11 @@
+.table {
+  margin: auto;
+  width: 100% !important;
+}
+table th {
+  text-align: center;
+}
+
+table tr {
+  vertical-align: center;
+}

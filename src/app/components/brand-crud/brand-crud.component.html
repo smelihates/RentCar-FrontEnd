@@ -1,0 +1,53 @@
+<div class="card" style="width: 100%; margin-top: 10px">
+  <div class="card-body col-md-12" style="top: 10px; width: 300px">
+    <h3 class="card-title"><b> Araç Marka İşlemleri</b></h3>
+    <div>
+      <form #form="ngForm" (submit)="onSubmit(form)">
+        <input
+          type="hidden"
+          name="brandId"
+          [value]="brandService.brandFormData.brandId"
+        />
+        <div class="form-group">
+          <div>
+            <div class="card" style="width: 500px; left: 10px">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Yeni Marka Adı"
+                      name="brandName"
+                      #brandName="ngModel"
+                      [(ngModel)]="brandService.brandFormData.brandName"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <button
+                      class="btn btn-primary btn-block"
+                      type="submit"
+                      style="width: 100px"
+                    >
+                      Tamam
+                    </button>
+                  </div>
+                  <div class="col-md-3">
+                    <button
+                      class="btn btn-primary btn-block"
+                      type="reset"
+                      style="width: 100px"
+                    >
+                      İptal
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -10,15 +10,21 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
 
-  constructor(private brandsService: BrandService) {}
+  constructor(public brandService: BrandService) {}
 
   ngOnInit(): void {
-    this.getAll();
+    //this.getAll();
+    this.brandService.refreshBrandList();
   }
 
   getAll() {
-    this.brandsService.getAll().subscribe((response) => {
+    console.log(this.brandService.brands);
+    this.brandService.getAll().subscribe((response) => {
       this.brands = response.data;
     });
+  }
+
+  populateForm(selectBrand: Brand) {
+    this.brandService.brandFormData = Object.assign({}, selectBrand);
   }
 }

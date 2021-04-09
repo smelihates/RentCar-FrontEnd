@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSlider, MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { BrandOptionComponent } from './components/brand-option/brand-option.component';
 import { ColorOptionComponent } from './components/color-option/color-option.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PaymentComponent } from './components/payment/payment.component';
+import { BrandCRUDComponent } from './components/brand-crud/brand-crud.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
     FilterPipePipe,
     BrandOptionComponent,
     ColorOptionComponent,
+    PaymentComponent,
+
+    BrandCRUDComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +50,9 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
