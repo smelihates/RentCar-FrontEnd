@@ -1,5 +1,5 @@
 export class CarD {
-  carId: number;
+  id: number;
   brandId: number;
   model: string;
   modelYear: number;

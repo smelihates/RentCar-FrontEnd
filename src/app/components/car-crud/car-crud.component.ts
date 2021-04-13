@@ -5,7 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs/operators';
 import { Brand } from 'src/app/models/brand';
@@ -37,7 +37,8 @@ export class CarCrudComponent implements OnInit {
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService,
-    private colorService: ColorService
+    private colorService: ColorService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -64,7 +65,7 @@ export class CarCrudComponent implements OnInit {
 
   createCarForm() {
     this.carForm = this.formBuilder.group({
-      id: [undefined, Validators.required],
+      id: [undefined],
       brandId: ['', Validators.required],
       model: ['', Validators.required],
       modelYear: ['', Validators.required],
@@ -106,24 +107,25 @@ export class CarCrudComponent implements OnInit {
     console.log('reset');
   }
   add() {
-    console.log(this.carForm.valid);
+    console.log(this.carForm.value);
     if (this.carForm.valid) {
-      let carModel = Object.assign({}, this.carForm.value);
-      this.carService.addCar(carModel).subscribe(
+      this.car1 = Object.assign(this.car1, this.carForm.value);
+      console.log('carModel : ' + this.car1);
+      this.carService.addCar(this.car1).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {
           console.log('responseError');
-          console.log(responseError.error.errors);
-          if (responseError.error.errors.length > 0) {
-            for (let i = 0; i < responseError.error.errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.errors[i].ErrorMessage,
-                'Doğrulama hatası'
-              );
-            }
-          }
+          console.log(responseError);
+          // if (responseError.error.errors.length > 0) {
+          //   for (let i = 0; i < responseError.error.errors.length; i++) {
+          //     this.toastrService.error(
+          //       responseError.error.errors[i].ErrorMessage,
+          //       'Doğrulama hatası'
+          //     );
+          //   }
+          // }
         }
       );
     } else {
@@ -138,6 +140,7 @@ export class CarCrudComponent implements OnInit {
       this.carService.updateCar(carModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
+          this.router.navigateByUrl('/car/edit');
         },
         (responseError) => {
           console.log('responseError');

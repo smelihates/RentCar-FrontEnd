@@ -45,6 +45,8 @@ export class CarService {
   }
 
   addCar(car: CarD): Observable<ResponseModel> {
+    console.log('new car :' + car);
+    car.id = 0;
     let newUrl = ApiUrl + 'cars/add';
     return this.httpClient.post<ResponseModel>(newUrl, car);
   }

@@ -17,16 +17,23 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label for="brandId">Marka Id</label>
-                    <input
+                    <label for="brandId">Marka</label>
+                    <select
                       class="form-control"
-                      type="number"
-                      id="brandId"
+                      [(ngModel)]="currentBrandId"
                       formControlName="brandId"
-                      placeholder="Yeni Marka Adı"
-                      required
-                      minlength="1"
-                    />
+                      aria-label="Default select example"
+                      style="width: 200px"
+                      (change)="getDeneme1()"
+                    >
+                      <option
+                        *ngFor="let brand of brands"
+                        [selected]="brand.brandId == currentBrandId"
+                        [ngValue]="brand.brandId"
+                      >
+                        {{ brand.brandName }}
+                      </option>
+                    </select>
                   </div>
 
                   <div class="col-md-4">
@@ -56,16 +63,23 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label for="colorId">Renk Id</label>
-                    <input
+                    <label for="colorId">Renk</label>
+                    <select
                       class="form-control"
-                      type="number"
-                      id="colorId"
+                      [(ngModel)]="currentColorId"
                       formControlName="colorId"
-                      placeholder="Yeni Renk Id"
-                      required
-                      minlength="1"
-                    />
+                      aria-label="Default select example"
+                      style="width: 200px"
+                      (change)="getDeneme1()"
+                    >
+                      <option
+                        *ngFor="let color of colors"
+                        [selected]="color.colorId == currentColorId"
+                        [ngValue]="color.colorId"
+                      >
+                        {{ color.colorName }}
+                      </option>
+                    </select>
                   </div>
                   <div class="col-md-4">
                     <label for="dailyPrice">Günlük Fiyat</label>
@@ -91,46 +105,7 @@
                       minlength="1"
                     />
                   </div>
-                  <div class="rov">
-                    <div class="col-md-3">
-                      <label for="brandId">Marka Id</label>
-                      <select
-                        class="form-control"
-                        [(ngModel)]="currentBrandId"
-                        formControlName="brandId"
-                        aria-label="Default select example"
-                        style="width: 200px"
-                        (change)="getDeneme1()"
-                      >
-                        <option
-                          *ngFor="let brand of brands"
-                          [selected]="brand.brandId == currentBrandId"
-                          [ngValue]="brand.brandId"
-                        >
-                          {{ brand.brandName }}
-                        </option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <label for="colorId">Color Id</label>
-                      <select
-                        class="form-control"
-                        [(ngModel)]="currentColorId"
-                        formControlName="colorId"
-                        aria-label="Default select example"
-                        style="width: 200px"
-                        (change)="getDeneme1()"
-                      >
-                        <option
-                          *ngFor="let color of colors"
-                          [selected]="color.colorId == currentColorId"
-                          [ngValue]="color.colorId"
-                        >
-                          {{ color.colorName }}
-                        </option>
-                      </select>
-                    </div>
-                  </div>
+
                   <div class="row">
                     <div>
                       <button
