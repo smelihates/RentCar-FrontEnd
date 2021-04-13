@@ -10,15 +10,19 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
 
-  constructor(private colorService: ColorService) {}
+  constructor(public colorService: ColorService) {}
 
   ngOnInit(): void {
-    this.getAll();
+    //this.getAll();
+    this.colorService.refreshColorList();
   }
 
   getAll() {
     this.colorService.getAll().subscribe((response) => {
       this.colors = response.data;
     });
+  }
+  populateForm(selectColor: Color) {
+    this.colorService.colorFormData = Object.assign({}, selectColor);
   }
 }

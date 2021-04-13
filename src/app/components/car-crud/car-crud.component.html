@@ -1,0 +1,176 @@
+<div class="card" style="width: 100%; margin-top: 10px">
+  <div class="card-body col-md-12" style="top: 10px; width: 300px">
+    <h3 class="card-title"><b> Araç İşlemleri</b></h3>
+    <div>
+      <form [formGroup]="carForm">
+        <div class="form-group">
+          <div>
+            <div class="card" style="width: 800px; left: 10px">
+              <div class="card-body">
+                <div>
+                  <input
+                    class="form-control"
+                    type="hidden"
+                    id="id"
+                    formControlName="id"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="brandId">Marka Id</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="brandId"
+                      formControlName="brandId"
+                      placeholder="Yeni Marka Adı"
+                      required
+                      minlength="1"
+                    />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="model">Model</label>
+                    <input
+                      class="form-control"
+                      type="string"
+                      id="model"
+                      formControlName="model"
+                      placeholder="Yeni Model Adı"
+                      required
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="modelYear">Model Yılı</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="modelYear"
+                      formControlName="modelYear"
+                      placeholder="Yeni Model Yılı"
+                      required
+                      minlength="4"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="colorId">Renk Id</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="colorId"
+                      formControlName="colorId"
+                      placeholder="Yeni Renk Id"
+                      required
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="dailyPrice">Günlük Fiyat</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="dailyPrice"
+                      formControlName="dailyPrice"
+                      placeholder="Günlük Fiyat"
+                      required
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="description">Açıklama</label>
+                    <input
+                      class="form-control"
+                      type="string"
+                      id="description"
+                      formControlName="description"
+                      placeholder="Yeni Açıklama"
+                      required
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="rov">
+                    <div class="col-md-3">
+                      <label for="brandId">Marka Id</label>
+                      <select
+                        class="form-control"
+                        [(ngModel)]="currentBrandId"
+                        formControlName="brandId"
+                        aria-label="Default select example"
+                        style="width: 200px"
+                        (change)="getDeneme1()"
+                      >
+                        <option
+                          *ngFor="let brand of brands"
+                          [selected]="brand.brandId == currentBrandId"
+                          [ngValue]="brand.brandId"
+                        >
+                          {{ brand.brandName }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="colorId">Color Id</label>
+                      <select
+                        class="form-control"
+                        [(ngModel)]="currentColorId"
+                        formControlName="colorId"
+                        aria-label="Default select example"
+                        style="width: 200px"
+                        (change)="getDeneme1()"
+                      >
+                        <option
+                          *ngFor="let color of colors"
+                          [selected]="color.colorId == currentColorId"
+                          [ngValue]="color.colorId"
+                        >
+                          {{ color.colorName }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div>
+                      <button
+                        class="btn btn-primary btn-block"
+                        type="button"
+                        (click)="onSubmit()"
+                        style="
+                          width: 100px;
+                          right: -527px;
+                          margin-top: 10px;
+                          padding-left: 5px;
+                          position: relative;
+                        "
+                      >
+                        Tamam
+                      </button>
+                      <button
+                        class="btn btn-primary btn-block"
+                        type="reset"
+                        routerLink="/car/edit"
+                        (click)="onReset()"
+                        style="
+                          width: 100px;
+                          right: -566px;
+                          margin-top: 10px;
+                          position: relative;
+                        "
+                      >
+                        İptal
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-car></app-car>

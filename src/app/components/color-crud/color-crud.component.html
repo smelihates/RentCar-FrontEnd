@@ -1,12 +1,12 @@
 <div class="card" style="width: 100%; margin-top: 10px">
   <div class="card-body col-md-12" style="top: 10px; width: 300px">
-    <h3 class="card-title"><b> Araç Marka İşlemleri</b></h3>
+    <h3 class="card-title"><b> Araç Renk İşlemleri</b></h3>
     <div>
       <form #form="ngForm" (submit)="onSubmit(form)" (reset)="resetForm(form)">
         <input
           type="hidden"
-          name="brandId"
-          [value]="brandService.brandFormData.brandId"
+          name="colorId"
+          [value]="colorService.colorFormData.colorId"
         />
         <div class="form-group">
           <div>
@@ -17,13 +17,13 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Yeni Marka Adı"
-                      name="brandName"
-                      #brandName="ngModel"
-                      [(ngModel)]="brandService.brandFormData.brandName"
+                      placeholder="Yeni Renk Adı"
+                      name="colorName"
+                      #colorName="ngModel"
+                      [(ngModel)]="colorService.colorFormData.colorName"
                       required
                       minlength="3"
-                      [class.invalid]="brandName.invalid && brandName.touched"
+                      [class.invalid]="colorName.invalid && colorName.touched"
                     />
                   </div>
                   <div class="col-md-3">

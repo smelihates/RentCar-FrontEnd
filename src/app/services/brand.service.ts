@@ -31,10 +31,6 @@ export class BrandService {
 
   refreshBrandList() {
     let newUrl = ApiUrl + 'brands/getall';
-    //console.log(newUrl);
-    // this.httpClient.get(newUrl).subscribe((response: any) => { this.brands = response;
-    //   console.log('markalar' + this.brands);
-    // });
     this.httpClient
       .get<ListResponseModel<Brand>>(newUrl)
       .subscribe((response) => {

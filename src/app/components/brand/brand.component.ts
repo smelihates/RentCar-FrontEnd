@@ -18,7 +18,7 @@ export class BrandComponent implements OnInit {
   }
 
   getAll() {
-    console.log(this.brandService.brands);
+    //console.log(this.brandService.brands);
     this.brandService.getAll().subscribe((response) => {
       this.brands = response.data;
     });

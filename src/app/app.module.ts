@@ -22,6 +22,8 @@ import { ColorOptionComponent } from './components/color-option/color-option.com
 import { ToastrModule } from 'ngx-toastr';
 import { PaymentComponent } from './components/payment/payment.component';
 import { BrandCRUDComponent } from './components/brand-crud/brand-crud.component';
+import { ColorCrudComponent } from './components/color-crud/color-crud.component';
+import { CarCrudComponent } from './components/car-crud/car-crud.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,10 @@ import { BrandCRUDComponent } from './components/brand-crud/brand-crud.component
     PaymentComponent,
 
     BrandCRUDComponent,
+
+    ColorCrudComponent,
+
+    CarCrudComponent,
   ],
   imports: [
     BrowserModule,

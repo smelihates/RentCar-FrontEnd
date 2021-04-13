@@ -1,4 +1,4 @@
-export interface Car {
+export class Car {
   carId: string;
   brandName: string;
   modelName: string;

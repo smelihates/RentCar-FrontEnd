@@ -10,8 +10,6 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand-crud.component.css'],
 })
 export class BrandCRUDComponent implements OnInit {
-  addLayer: Boolean = false;
-
   constructor(
     public brandService: BrandService,
     private toastrService: ToastrService
@@ -62,11 +60,6 @@ export class BrandCRUDComponent implements OnInit {
   resetForm(form: NgForm) {
     form.form.reset();
     this.brandService.brandFormData = new Brand();
-  }
-
-  addLayerClass() {
-    console.log(this.addLayer);
-    this.addLayer == false ? (this.addLayer = true) : (this.addLayer = false);
-    console.log(this.addLayer);
+    console.log('222');
   }
 }
