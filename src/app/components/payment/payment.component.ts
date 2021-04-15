@@ -29,12 +29,12 @@ export class PaymentComponent implements OnInit {
 
   createCarPaymentForm() {
     this.carPaymentFormGroup = this.formBuilder.group({
-      userId: ['3', Validators.required],
+      userId: [3, Validators.required],
       fullName: ['alev yedi', Validators.required],
       creditCardNumber: ['1234564578941234', Validators.required],
-      expirationMonth: ['11', Validators.required],
-      expirationYear: ['22', Validators.required],
-      ccv: ['223', Validators.required],
+      expirationMonth: [11, Validators.required],
+      expirationYear: [22, Validators.required],
+      ccv: [223, Validators.required],
     });
   }
 

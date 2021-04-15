@@ -1,101 +1,101 @@
-<br />
-<div>
-  <div class="card col-md-3" style="width: 21rem">
-    <h5 class="card-title">Kredi Kartı ile ödeme</h5>
-    <br />
-    <div class="card">
-      <form [formGroup]="carPaymentFormGroup">
-        <div class="card-body form-group" style="width: 300px">
-          <div class="col-md-3">
-            <label class="card-title" for="fullName" style="width: 200px"
-              ><b> Kart üzerindeki isim</b></label
-            >
-            <input
-              type="text"
-              id="fullName"
-              formControlName="fullName"
-              class="form-control card-title"
-              placeholder="Ad Soyad"
-              style="width: 300px"
-            />
+<div class="mb-3" style="margin-top: 5px">
+  <div class="row">
+    <div class="card col-md-3" style="width: 400px">
+      <div class="card" style="border: thin">
+        <form [formGroup]="carPaymentFormGroup">
+          <div class="card-body form-group" style="width: 300px">
+            <div class="col-md-3">
+              <label class="card-title" for="fullName" style="width: 250px"
+                ><b> Kart Sahibinin Adı</b></label
+              >
+              <input
+                type="text"
+                id="fullName"
+                formControlName="fullName"
+                class="form-control card-title"
+                placeholder="Ad Soyad"
+                style="width: 340px"
+              />
+            </div>
+            <div class="col-md-3"></div>
+            <label for="creditCardNumber"><b> Kredi Kartı Numarası</b></label>
+            <div class="col-md-3">
+              <input
+                type="text"
+                id="creditCardNumber"
+                formControlName="creditCardNumber"
+                class="form-control card-title"
+                placeholder="################"
+                pattern=" [0-9]{16}"
+                required
+                style="width: 340px"
+              />
+            </div>
+            <div class="row0 col-md-3">
+              <tr>
+                <td style="width: 110px" style="text-align: center" colspan="2">
+                  <b>Son Kullanım Tarihi</b>
+                </td>
+                <td style="width: 110px" style="text-align: center">
+                  <b> CCV</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="expirationMonth"
+                    formControlName="expirationMonth"
+                    class="form-control card-title"
+                    placeholder="Ay"
+                    style="width: 110px"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="expirationYear"
+                    formControlName="expirationYear"
+                    class="form-control"
+                    placeholder="Yıl"
+                    style="width: 110px"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="ccv"
+                    formControlName="ccv"
+                    class="form-control"
+                    placeholder="###"
+                    style="width: 110px"
+                  />
+                </td>
+              </tr>
+            </div>
           </div>
-          <div class="col-md-3"></div>
-          <label for="creditCardNumber"><b> Kredi Kartı Numarası</b></label>
-          <div class="col-md-3">
-            <input
-              type="text"
-              id="creditCardNumber"
-              formControlName="creditCardNumber"
-              class="form-control card-title"
-              placeholder="####-####-####-####"
-              pattern=" [0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
-              required
-              style="width: 300px"
-            />
-          </div>
-          <div class="row0 col-md-3">
-            <tr>
-              <td style="width: 100px" style="text-align: center" colspan="2">
-                <b>Son Kullanım Tarihi</b>
-              </td>
-              <td style="width: 100px" style="text-align: center">
-                <b> CCV</b>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  id="expirationMonth"
-                  formControlName="expirationMonth"
-                  class="form-control card-title"
-                  placeholder="Ay"
-                  style="width: 100px"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="expirationYear"
-                  formControlName="expirationYear"
-                  class="form-control"
-                  placeholder="Yıl"
-                  style="width: 100px"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="ccv"
-                  formControlName="ccv"
-                  class="form-control"
-                  placeholder="###"
-                  style="width: 100px"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="userId"
-                  formControlName="userId"
-                  class="form-control"
-                  placeholder="#"
-                  style="width: 100px"
-                />
-              </td>
-            </tr>
-          </div>
-          <div class="card-footer float-right">
+          <div class="card-footer" style="width: 340px">
             <button
               type="button"
               (click)="addCreditCard()"
               class="btn btn-primary"
+              style="width: 120px; position: absolute; right: 15px"
             >
               Ödeme Yap
             </button>
+            <td>
+              <input
+                type="text"
+                id="userId"
+                formControlName="userId"
+                class="form-control"
+                placeholder="#"
+                style="width: 100%"
+              />
+            </td>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

@@ -46,11 +46,13 @@
         <td style="width: 120px">{{ car.modelName }}</td>
         <td style="width: 120px">{{ car.modelYear }}</td>
         <td style="width: 120px">{{ car.colorName }}</td>
-        <td
-          style="width: 30px; text-align: center"
-          routerLink="/car/edit/{{ car.carId }}"
-        >
-          <mat-icon aria-hidden="false" aria-label="update">update</mat-icon>
+        <td style="width: 30px; text-align: center">
+          <mat-icon
+            aria-hidden="false"
+            routerLink="/car/edit/{{ car.carId }}"
+            aria-label="update"
+            >update</mat-icon
+          >
         </td>
         <!-- <td style="width: 120px">{{ car.dailyPrice }}</td>
         <td>{{ car.description }}</td> -->
