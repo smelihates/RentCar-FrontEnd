@@ -24,6 +24,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { BrandCRUDComponent } from './components/brand-crud/brand-crud.component';
 import { ColorCrudComponent } from './components/color-crud/color-crud.component';
 import { CarCrudComponent } from './components/car-crud/car-crud.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,8 @@ import { CarCrudComponent } from './components/car-crud/car-crud.component';
     ColorCrudComponent,
 
     CarCrudComponent,
+
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
