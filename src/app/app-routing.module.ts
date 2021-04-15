@@ -10,6 +10,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: 'brand/list', component: BrandComponent },
@@ -17,13 +18,25 @@ const routes: Routes = [
   { path: 'customer/list', component: CustomerComponent },
   { path: 'car/list', component: CarComponent },
   { path: 'car/details/:carId', component: CarDetailComponent },
-  { path: 'rental/list', component: RentalComponent },
+  {
+    path: 'rental/list',
+    component: RentalComponent,
+    canActivate: [LoginGuard],
+  },
   { path: 'cars/brand/:brandId', component: CarComponent },
   { path: 'cars/color/:colorId', component: CarComponent },
 
-  { path: 'car/edit', component: CarCrudComponent },
-  { path: 'car/edit/:carId', component: CarCrudComponent },
-  { path: 'car/payment', component: PaymentComponent },
+  { path: 'car/edit', component: CarCrudComponent, canActivate: [LoginGuard] },
+  {
+    path: 'car/edit/:carId',
+    component: CarCrudComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'car/payment',
+    component: PaymentComponent,
+    canActivate: [LoginGuard],
+  },
   { path: 'login', component: LoginComponent },
 ];
 
